@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* screen은 화면이라는 뜻(미디어 타입) & 2번째 조건은 어떤 경우에 실행할 건지 */
+        /* 800px보다 커졌을 경우 실행 */
+        @media screen and (min-width: 800px)  {
+            img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="image.jpg">
+</body>
+</html>

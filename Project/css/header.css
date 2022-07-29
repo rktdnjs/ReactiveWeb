@@ -1,0 +1,111 @@
+.header {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    
+    /*다른 요소랑 겹쳤을 때 상대적으로 높게 보이도록 하기 위함 */
+    z-index: 20;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 16px;
+}
+
+.header__start {
+    /* 줄높이, 요소높이 똑같이 맞춰서 60px공간의 가운데 위치하도록 하였음 */
+    height: 40px;
+    line-height: 40px;
+}
+
+.header__hamburger {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.header__title {
+    font-size: 1.2rem;
+    margin-left: 6px;
+}
+
+/* 헤더의 너비를 따라감 */
+.header__center {
+    width: 50%;
+
+}
+
+.header__form {
+    /* display flex는 검색창과 검색버튼을 붙이기 위해 사용함 */
+    /* 따라가는 상태 구현 끝 */
+    display: flex;
+    max-width: 100%;
+}
+
+.header__input--text {
+    /* 검색창 너비만큼만 빼준다 */
+    width: calc(100% - 60px);
+    height: 40px;
+    padding: 0 6px;
+    border: 1px solid gray;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+}
+
+.header__input--button {
+    width: 60px;
+    height: 40px;
+    border: 1px solid gray;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+}
+
+.header__input--button:hover {
+    background-color: #eaeaea;
+    transition-duration: 0.3s;
+}
+
+.header__end {
+    display: flex;
+}
+
+.header__search {
+    /* 처음에는 안보이다가 디스플레이가 좁아지면 보이게 짜야함 */
+    display: none;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.header__profile {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    /* background-color: tomato; */
+    background-image: url(../image/profile.PNG);
+    background-size: 40px 40px;
+}
+
+/* 반응형? -> 미디어 쿼리!! */
+@media screen and (max-width: 800px) {
+    .header__title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header__center {
+        display: none;
+    }
+    .header__search {
+        display: block;
+    }
+}

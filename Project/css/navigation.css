@@ -1,0 +1,58 @@
+.nav {
+    position: fixed;
+    top:0;
+    left:0;
+    /* 이 경우에 둘이 겹치면 헤더가 더 우선적으로 앞에 보이게 됨 */
+    z-index: 10;
+}
+
+.nav__wrapper {
+    min-width: 200px;
+    /* 화면 높이 만큼은 높이를 차지하고 있는다 */
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    padding-top: 80px;
+    /* 혹시나 리스트 아이템에 기호가 추가되는 것을 방지 */
+    list-style: none;
+}
+
+.nav__wrapper li {
+    display: flex;
+    padding: 10px 16px 10px;
+}
+
+.nav__wrapper li:hover {
+    background-color: #eaeaea;
+    transition-duration: 0.3s;
+}
+
+.nav__icon {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.nav__menu {
+    margin: 0 0 0 8px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* 800px 아래에서 텍스트바가 사라지게함 */
+@media screen and (max-width:800px) {
+    .nav__menu {
+        display: none;
+    }
+    /* 빈 공간도 사라져야함! */
+    .nav__wrapper {
+        min-width: 0;
+    }
+}
+
+/* 3단 변신 : 아예 왼쪽 바가 사라지게 */
+@media screen and (max-width:400px) {
+    .nav__wrapper {
+        display: none;
+    }
+}
